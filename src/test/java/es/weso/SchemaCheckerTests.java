@@ -35,7 +35,7 @@ public class SchemaCheckerTests {
         this.mockMvc.perform(get("/schema/check")
                 .param("schema", strSchema)
                 .param("schemaFormat","SHEXC")
-                .param("schemaName","SHEX")
+                .param("schemaEngine","SHEX")
                 .param("resultFormat","SHEXJ"))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(

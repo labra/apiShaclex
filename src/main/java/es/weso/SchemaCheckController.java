@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import scala.Option;
 import scala.util.Try;
 
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class SchemaCheckController {
@@ -16,10 +15,10 @@ public class SchemaCheckController {
     @RequestMapping("/schema/check")
     public SchemaCheckerResult schemaCheck(@RequestParam(value="schema") String schema,
                              @RequestParam(value="schemaFormat") String schemaFormat,
-                             @RequestParam(value="schemaName") String schemaName,
+                             @RequestParam(value="schemaEngine") String schemaEngine,
                              @RequestParam(value="resultFormat") String resultFormat) {
         Option<String> base = Option.apply(null);
-        Try<Schema> t = Schemas.fromString(schema,schemaFormat, schemaName, base);
+        Try<Schema> t = Schemas.fromString(schema,schemaFormat, schemaEngine, base);
         if (t.isSuccess()) {
             Schema s = t.get();
             Try<String> tstr = s.serialize(resultFormat);
@@ -30,11 +29,10 @@ public class SchemaCheckController {
                        "Error: " + tstr);
 
             }
-        } else {
-            Throwable e = t.failed().get();
+        } else
             return new SchemaCheckerResult(schema,schemaFormat,resultFormat,
-                    "Error: " + e.getMessage());
-        }
+                    "Error: " + t);
+
     }
 
 }
