@@ -1,34 +1,21 @@
-logs
-project/project
-project/target
-target
-tmp
-.history
-dist
+### Java template
+*.class
 
-# Eclipse
-.cache
-.classpath
-.project
-.scala_dependencies
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.idea
+
 .settings
-.target/
 
-# SBT
-boot/
-lib_managed/
-target/
-.history
+target
 
-# IntelliJ
-.idea/
-*.iml
-*.ipr
-*.iws
-out/
-
-# TextMate
-*.tmproj
-
-# Mac
-.DS_Store
+apiShaclex.iml
