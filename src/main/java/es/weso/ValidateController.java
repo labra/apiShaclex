@@ -14,10 +14,12 @@ import scala.util.Try;
 import java.util.ArrayList;
 import java.util.List;
 
+import static es.weso.Config.VALIDATE_URI;
+
 @RestController
 public class ValidateController {
 
-    @RequestMapping("/validate")
+    @RequestMapping(VALIDATE_URI)
     public ValidateResult validate(
             @RequestParam(value="schema") String schema,
             @RequestParam(value="schemaFormat") String schemaFormat,

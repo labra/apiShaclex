@@ -2,17 +2,18 @@ package es.weso;
 
 import es.weso.schema.Schemas;
 import es.weso.schema.Schema;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import scala.Option;
 import scala.util.Try;
-
+import static es.weso.Config.SCHEMA_CHECK_URI;
 
 @RestController
 public class SchemaCheckController {
 
-    @RequestMapping("/schema/check")
+    @RequestMapping(SCHEMA_CHECK_URI)
     public SchemaCheckerResult schemaCheck(@RequestParam(value="schema") String schema,
                              @RequestParam(value="schemaFormat") String schemaFormat,
                              @RequestParam(value="schemaEngine") String schemaEngine,
