@@ -1,4 +1,4 @@
-package es.weso.results;
+package es.weso;
 
 import java.util.List;
 
