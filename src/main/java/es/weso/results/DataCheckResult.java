@@ -1,21 +1,21 @@
-package es.weso;
+package es.weso.results;
 
-public class SchemaCheckerResult {
+public class DataCheckResult {
 
-    private final String schema;
+    private final String data;
     private final String format;
     private final String outFormat;
     private final String result;
 
-    public SchemaCheckerResult(String schema, String format, String outFormat, String result) {
-        this.schema = schema;
+    public DataCheckResult(String data, String format, String outFormat, String result) {
+        this.data = data;
         this.format = format;
         this.outFormat = outFormat;
         this.result = result;
     }
 
-    public String getSchema() {
-        return schema;
+    public String getData() {
+        return data;
     }
 
     public String getFormat() {

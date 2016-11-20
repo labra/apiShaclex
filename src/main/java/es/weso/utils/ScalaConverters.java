@@ -1,4 +1,4 @@
-package es.weso;
+package es.weso.utils;
 
 import scala.collection.JavaConverters;
 

@@ -1,32 +1,30 @@
-package es.weso;
+package es.weso.controllers;
 
 import static es.weso.Config.API_URI;
-import static es.weso.ScalaConverters.asJava;
 
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.weso.schema.DataFormats;
-import es.weso.schema.Schemas;
+import es.weso.Schema2Java;
 
 @RestController
 public class OptionsController {
 
     @RequestMapping(API_URI + "availableSchemaFormats")
     public List<String> availableSchemaFormats() {
-        return asJava(Schemas.availableFormats());
+        return Schema2Java.availableSchemaFormats();
     }
 
     @RequestMapping(API_URI + "availableSchemaEngines")
     public List<String> availableSchemaEngines() {
-        return asJava(Schemas.availableSchemaNames());
+        return Schema2Java.availableSchemaEngines();
     }
 
     @RequestMapping(API_URI + "availableDataFormats")
     public List<String> availableDataFormats() {
-        return asJava(DataFormats.formatNames());
+        return Schema2Java.availableDataFormats();
     }
 
 }

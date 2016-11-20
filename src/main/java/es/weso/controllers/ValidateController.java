@@ -1,6 +1,6 @@
-package es.weso;
+package es.weso.controllers;
 
-import es.weso.rdf.RDFReader;
+import es.weso.results.ValidateResult;
 import es.weso.rdf.jena.RDFAsJenaModel;
 import es.weso.schema.Result;
 import es.weso.schema.Schema;
