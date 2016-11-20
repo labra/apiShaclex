@@ -1,0 +1,132 @@
+= Shaclex API Guide
+Jose Emilio Labra Gayo;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+= Overview
+
+The SHACLEX API is intended to facilitate RDF validation using either http://www.shex.io[ShEx] or
+ http://w3c.github.io/data-shapes/shacl[SHACL]
+
+
+[[data]]
+== RDF Data
+
+RDF Data checking
+
+=== HTTP request
+
+include::{snippets}/dataCheckTurtleExample/http-request.adoc[]
+
+=== Request parameters
+
+include::{snippets}/dataCheckTurtleExample/request-parameters.adoc[]
+
+=== Example curl request
+
+include::{snippets}/dataCheckTurtleExample/curl-request.adoc[]
+
+=== Example response
+
+include::{snippets}/dataCheckTurtleExample/http-response.adoc[]
+
+[[schema]]
+== Check Schemas
+
+Check schemas
+
+=== HTTP request 
+
+include::{snippets}/schemaCheckShExExample/http-request.adoc[]
+
+=== Request parameters
+
+include::{snippets}/schemaCheckShExExample/request-parameters.adoc[]
+
+=== Example curl request
+
+include::{snippets}/schemaCheckShExExample/curl-request.adoc[]
+
+=== Example response
+
+include::{snippets}/schemaCheckShExExample/http-response.adoc[]
+
+[[resources-validation]]
+== Validation
+
+Validation
+
+[[resources-options]]
+== Options
+
+Data and Schema options
+
+=== Schema Engines
+
+List of available schema Engines.
+
+==== Example curl request
+
+include::{snippets}/availableSchemaEngines/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/availableSchemaEngines/http-response.adoc[]
+
+=== Schema Formats
+
+List of available schema formats
+
+==== Example curl request
+
+include::{snippets}/availableSchemaFormats/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/availableSchemaFormats/http-response.adoc[]
+
+=== RDF Data Formats
+
+List of available RDF data formats
+
+==== Example curl request
+
+include::{snippets}/availableDataFormats/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/availableDataFormats/http-response.adoc[]
+
+[[resources-index]]
+== Index
+
+The index provides the entry point into the service and
+ can be used as a human-readable entry point in HTML
+
+// [[resources-index-access]]
+// === Accessing the index
+
+// A `GET` request is used to access the landing page
+
+// ==== Example request
+
+// include::{snippets}/index/curl-request.adoc[]
+
+// ==== Example response
+// include::{snippets}/index/http-response.adoc[]
+
+[[resources-index-links]]
+
+
+[[overview-errors]]
+== Errors
+
+Whenever an error response (status code >= 400) is returned, the body will contain a JSON object
+that describes the problem. The error object has the following structure:
+
+include::{snippets}/error/http-response.adoc[]
