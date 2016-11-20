@@ -13,9 +13,8 @@
 hs_err_pid*
 
 .idea
-
 .settings
-
+.springBeans
+.classpath
 target
-
 apiShaclex.iml
